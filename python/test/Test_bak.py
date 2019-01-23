@@ -5,7 +5,7 @@ import unittest
     参考链接
         1. [python接口自动化测试(六)-unittest-单个用例管理](https://www.cnblogs.com/puresoul/p/7490528.html)
 '''
-# 2. 继承自unittest.TestCase类
+# 2. 继承自unittest.TestCase类 (好像这个类名必须是以Test开头的, 还不能就是Test, 后面必须有字符)
 class Test_2019114_172341(unittest.TestCase):
 
     # 3. 配置环境：进行测试前的初始化工作
