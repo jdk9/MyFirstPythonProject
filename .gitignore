@@ -1,3 +1,5 @@
 .idea/
 *.pyc
 python/test/basic_grammar/demo/characterPainting/characterPaintingGif/Cache/
+python/test/basic_grammar/demo/weChatLuckMoney/QR.png
+python/test/basic_grammar/demo/weChatLuckMoney/itchat.pkl
