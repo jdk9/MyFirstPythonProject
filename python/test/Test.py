@@ -11,7 +11,8 @@ class Test(unittest.TestCase):
         print(11//4)
 
     def test_2(self):
-        print('2')
+        import sys
+        print(sys.version_info[0])
 
     def test_3(self):
         print('3')
