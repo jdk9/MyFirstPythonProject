@@ -1,27 +1,70 @@
+'''
+    将图片转化为下雪的背景
+'''
+
 # 导入相应模块
 import pygame
 import random
 import base64
 import os
-from memory_pic import snow_jpg
+# from memory_pic import snow_jpg
 
+# 生成图片的py文件
+"""
+    将图像文件转换为py文件
+    :param picture_name:
+    :return:
+"""
+def pic2py(picture_names, py_name):
+    write_data = []
+    for picture_name in picture_names:
+        filename = picture_name.replace('.', '_')
+        open_pic = open("%s" % picture_name, 'rb')
+        b64str = base64.b64encode(open_pic.read())
+        open_pic.close()
+        # 注意这边b64str一定要加上.decode()
+        write_data.append('%s = "%s"\n' % (filename, b64str.decode()))
+
+    f = open('%s.py' % py_name, 'w+')
+    for data in write_data:
+        f.write(data)
+    f.close()
+
+# 获取py文件中的图片
 def get_pic(pic_code, pic_name):
     image = open(pic_name, 'wb')
     image.write(base64.b64decode(pic_code))
     image.close()
 
+# 要转换的图片, 保存到数组
+pics = ['wst.jpg']
+# pics = ['snow.jpg']
+# 将pics里面的图片写到 memory_pic.py 中
+pic2py(pics, 'memory_pic')
+# pic2py(pics, 'memory_pic')
+print("ok")
+
+from memory_pic import wst_jpg
+
+# 定义临时文件名
+filename = 'background.jpg'
+# filename = 'wst'
+
 # pygame初始化
 pygame.init()
 # 取出图片
-get_pic(snow_jpg, 'snow.jpg')
+get_pic(wst_jpg, filename)
+# get_pic(snow_jpg, 'snow.jpg')
 # 声明屏幕/窗口size大小，与背景图片的大小一样才能完美显示
-SIZE = (1280, 821)
+SIZE = (310, 552)
+# SIZE = (1280, 821)
 # 给屏幕设置大小，参数为上面设置的大小
 screen = pygame.display.set_mode(SIZE)
 # 设置标题
-pygame.display.set_caption("下雪了")
+pygame.display.set_caption("雪中的魏舒婷")
+# pygame.display.set_caption("下雪了")
 # 加载背景图
-background = pygame.image.load('snow.jpg')
+background = pygame.image.load(filename)
 
 # 定义一个雪花列表
 snow = []
@@ -64,5 +107,6 @@ while not done:
     # 每秒循环20次
     clock.tick(20)
 
-os.remove('snow.jpg')
+os.remove(filename)
+os.remove('memory_pic.py')
 pygame.quit()
