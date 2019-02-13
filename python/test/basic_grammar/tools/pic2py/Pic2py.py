@@ -1,3 +1,6 @@
+'''
+    将图片转化为py代码, 为了生成单个可执行文件
+'''
 import base64
 
 def pic2py(picture_names, py_name):
@@ -21,6 +24,10 @@ def pic2py(picture_names, py_name):
     f.close()
 
 if __name__ == '__main__':
-    pics = ["snow.jpg"]         # 所有要转换的图片, 保存到数组
-    pic2py(pics, 'memory_pic')  # 将pics里面的图片写到 memory_pic.py 中
+    # 所有要转换的图片, 保存到数组
+    pics = ['wst.jpg']
+    # pics = ['snow.jpg']
+    # 将pics里面的图片写到 memory_pic.py 中
+    pic2py(pics, 'memory_pic')
+    # pic2py(pics, 'memory_pic')
     print("ok")
