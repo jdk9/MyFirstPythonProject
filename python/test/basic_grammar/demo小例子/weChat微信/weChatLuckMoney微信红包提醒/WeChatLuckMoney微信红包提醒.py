@@ -2,7 +2,8 @@ import itchat
 import pygame
 
 '''
-	微信红包助手
+	微信红包提醒
+	原文链接: [AhabCode/微信红包助手.py](https://github.com/AhabWang/AhabCode/blob/master/%E5%BE%AE%E4%BF%A1%E7%BA%A2%E5%8C%85%E5%8A%A9%E6%89%8B.py)
 '''
 
 '''声音提示'''
