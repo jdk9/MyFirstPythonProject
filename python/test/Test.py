@@ -15,7 +15,7 @@ class Test(unittest.TestCase):
         print(sys.version_info[0])
 
     def test_3(self):
-        print('3')
+        print((-1)**0)
 
     def test_4(self):
         print('4')
@@ -25,4 +25,4 @@ class Test(unittest.TestCase):
         pass
 
 if __name__ == '__main__':
-    unittest.TestLoader().loadTestsFromTestCase(Test)
+    unittest.TestLoader().(Test)loadTestsFromTestCase

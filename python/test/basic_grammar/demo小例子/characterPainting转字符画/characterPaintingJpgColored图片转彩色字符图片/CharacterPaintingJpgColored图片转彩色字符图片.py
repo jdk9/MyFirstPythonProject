@@ -18,7 +18,7 @@ import argparse
     # OUTPUT = args.output
 '''
 file_name = 'wst.jpg'
-# file_name = '比特币.jpg'
+# file_name = 'confessBgp.jpg'
 
 # ascii_char = list("MNHQ$OC67)oa+>!:+. ")
 ascii_char = list("$@B%8&WM# *oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. ")
