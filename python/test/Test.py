@@ -25,4 +25,4 @@ class Test(unittest.TestCase):
         pass
 
 if __name__ == '__main__':
-    unittest.TestLoader().(Test)loadTestsFromTestCase
+    unittest.TestLoader().loadTestsFromTestCase(Test)
